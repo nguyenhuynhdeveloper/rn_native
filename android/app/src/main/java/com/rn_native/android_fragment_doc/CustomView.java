@@ -8,6 +8,7 @@ package com.rn_native.android_fragment_doc;
 import android.content.Context;
 import android.graphics.Color;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;

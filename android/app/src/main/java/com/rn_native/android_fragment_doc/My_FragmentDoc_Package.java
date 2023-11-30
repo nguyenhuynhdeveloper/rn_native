@@ -10,12 +10,18 @@ import com.facebook.react.uimanager.ViewManager;
 import java.util.Arrays;
 import java.util.List;
 
-public class MyPackage implements ReactPackage {
 
-    @NonNull
+import java.util.ArrayList;
+
+import javax.annotation.Nonnull;
+
+
+public class My_FragmentDoc_Package implements ReactPackage {
+
+    @Nonnull
     @Override
-    public List<NativeModule> createNativeModules(@NonNull ReactApplicationContext reactContext) {
-        return null;
+    public List<NativeModule> createNativeModules(@Nonnull ReactApplicationContext reactContext) {
+        return new ArrayList<>();
     }
 
     @Override

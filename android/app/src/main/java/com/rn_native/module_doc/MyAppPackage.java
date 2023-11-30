@@ -16,7 +16,6 @@ public class MyAppPackage implements ReactPackage {
    public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {
     //    return Collections.emptyList();
       return Arrays.<ViewManager>asList(
-    
     );
    }
 

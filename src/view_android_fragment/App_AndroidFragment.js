@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
-// import {MyView} from './MyView';
+import {MyView} from './MyView';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -25,7 +25,15 @@ export default class App_AndroidFragment extends Component<Props> {
         <Text style={styles.welcome} onPress={this.onClick}>
           Click here {this.state.progress}
         </Text>
-        {/* <MyView /> */}
+        <View
+          style={{
+            margin: 20,
+            // height: 300,
+            // width: 300,
+            backgroundColor: 'pink',
+          }}>
+          <MyView style={{margin: 20}} />
+        </View>
       </View>
     );
   }

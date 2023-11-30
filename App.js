@@ -13,8 +13,8 @@ const App = () => {
   // return <App_NativeModule />;
   // return <App_ViewLibrary />;
   // return <App_ViewDoc />;
-  // return <App_AndroidFragment />;
-  return <App_OpenActivity />;
+  return <App_AndroidFragment />;
+  // return <App_OpenActivity />;
 };
 
 export default App;
