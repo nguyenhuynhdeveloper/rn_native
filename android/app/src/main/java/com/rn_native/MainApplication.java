@@ -9,6 +9,7 @@ import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.soloader.SoLoader;
 import com.rn_native.module_doc.MyAppPackage;
+import com.rn_native.open_activity.MyOpenActivityPackage;
 import com.rn_native.view_doc.NativeViewDocPackage;
 import com.rn_native.view_library.NativeViewPackage;
 
@@ -35,6 +36,7 @@ public class MainApplication extends Application implements ReactApplication {
           packages.add(new MyAppPackage());  // native module doc
             packages.add(new NativeViewPackage());
             packages.add(new NativeViewDocPackage());
+            packages.add(new MyOpenActivityPackage());     // Package of open activity from RN
 
           return packages;
         }
