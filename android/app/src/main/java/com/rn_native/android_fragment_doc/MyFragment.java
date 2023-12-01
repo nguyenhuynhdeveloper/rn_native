@@ -1,5 +1,6 @@
 package com.rn_native.android_fragment_doc;
 
+
 //// replace with your package
 //package com.mypackage;
 
@@ -7,10 +8,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import androidx.fragment.app.Fragment;
 
-// replace with your view's import
-import com.rn_native.android_fragment_doc.CustomView;
+import androidx.fragment.app.Fragment;
 
 public class MyFragment extends Fragment {
     CustomView customView;
