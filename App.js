@@ -10,10 +10,10 @@ import App_OpenActivity from './src/open_activity/App_OpenActivity';
 
 const App = () => {
   // return <Text>xin chào </Text>;
-  // return <App_NativeModule />;
+  return <App_NativeModule />; // Doc native module
   // return <App_ViewLibrary />;
   // return <App_ViewDoc />;
-  return <App_AndroidFragment />;
+  // return <App_AndroidFragment />;
   // return <App_OpenActivity />;
 };
 
