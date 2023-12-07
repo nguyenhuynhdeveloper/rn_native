@@ -98,7 +98,8 @@ public class MyViewManager extends ViewGroupManager<FrameLayout> {
     ViewGroup parentView = (ViewGroup) root.findViewById(reactNativeViewId);
     setupLayout(parentView);
 
-    final MyFragment myFragment = new MyFragment();
+//    final MyFragment myFragment = new MyFragment();
+    final FragmentTo_RN myFragment = new FragmentTo_RN();
     FragmentActivity activity = (FragmentActivity) reactContext.getCurrentActivity();
     activity.getSupportFragmentManager()
             .beginTransaction()
