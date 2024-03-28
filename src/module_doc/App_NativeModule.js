@@ -6,8 +6,6 @@
  3. Phơi bày thuộc tính view sủ dụng @ReactProp hoặc @ReactPropGroup
  4. Đăng ký quản lú createViewManager của application package
  5. Implement the JavaScript module 
-
-
  */
 
 import React, { useEffect } from 'react';
