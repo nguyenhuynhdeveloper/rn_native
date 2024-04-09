@@ -1,4 +1,4 @@
-package com.rn_native.android_fragment_doc;
+package com.rn_native.fragmentView_doc;
 
 import android.os.Bundle;
 
@@ -10,11 +10,7 @@ import android.view.ViewGroup;
 
 import com.rn_native.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link FragmentTo_RN#newInstance} factory method to
- * create an instance of this fragment.
- */
+//  Cái FragmentTo_RN này ngang hàng với MyFragment của Doc react native
 public class FragmentTo_RN extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match

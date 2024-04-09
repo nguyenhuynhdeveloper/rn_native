@@ -10,6 +10,8 @@ import com.facebook.react.bridge.ReactContext;
 import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.uimanager.events.RCTEventEmitter;
 
+// Phần phục vụ cho Evnet : khi thao tác thu , cuộn , phóng bên android này sẽ thông báo cho bên JS biết để sử lý 
+
 class MyCustomView extends View {
     public MyCustomView(Context context) {
         super(context);

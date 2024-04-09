@@ -13,6 +13,9 @@ import java.util.List;
 
 import javax.annotation.Nonnull;
 
+// Tạo 1 class NativeViewDocPackage 
+// Đăng ký ReactImageMangerDoc vào trong Package này 
+
 public class NativeViewDocPackage implements ReactPackage {
 
     @Nonnull
@@ -24,6 +27,6 @@ public class NativeViewDocPackage implements ReactPackage {
     @Nonnull
     @Override
     public List<ViewManager> createViewManagers(@Nonnull ReactApplicationContext reactContext) {
-        return Arrays.asList(new ReactImageManagerDoc(reactContext));
+        return Arrays.asList(new ReactImageManager(reactContext));
     }
 }

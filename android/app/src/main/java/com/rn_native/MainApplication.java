@@ -8,7 +8,7 @@ import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.soloader.SoLoader;
-import com.rn_native.android_fragment_doc.My_FragmentDoc_Package;
+import com.rn_native.fragmentView_doc.MyPackage_FragmentViewDoc;
 import com.rn_native.module_doc.MyAppPackage;
 import com.rn_native.open_activity.MyOpenActivityPackage;
 import com.rn_native.view_doc.NativeViewDocPackage;
@@ -34,11 +34,12 @@ public class MainApplication extends Application implements ReactApplication {
           // packages.add(new MyReactNativePackage());
           
           // below MyAppPackage is added to the list of packages returned
-          packages.add(new MyAppPackage());  // native module doc
-            packages.add(new NativeViewPackage());
-            packages.add(new NativeViewDocPackage());
-            packages.add(new MyOpenActivityPackage());     // Package of open activity from RN
-            packages.add(new My_FragmentDoc_Package());     // Package of open activity from RN
+
+            packages.add(new MyAppPackage());  // native module doc
+            packages.add(new NativeViewPackage());   // Mở 1 View thư viện của android -> RN -- Làm theo Viblo
+            packages.add(new NativeViewDocPackage());   // Mở 1 View của android ở trong React native -- làm theo DOC
+            packages.add(new MyOpenActivityPackage());     // Package Mở 1 Activity của android vào view của React Native 
+            packages.add(new MyPackage_FragmentViewDoc());     // Package mở 1 Fragment của bên android vào view của React native-- Làm theo DOC
 
           return packages;
         }

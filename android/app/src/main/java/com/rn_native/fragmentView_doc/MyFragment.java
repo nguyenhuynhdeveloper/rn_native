@@ -1,4 +1,4 @@
-package com.rn_native.android_fragment_doc;
+package com.rn_native.fragmentView_doc;
 
 
 //// replace with your package
@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
+// Tạo 1 cái My Fragment kê thừa từ Fragment
 
 public class MyFragment extends Fragment {
     CustomView customView;

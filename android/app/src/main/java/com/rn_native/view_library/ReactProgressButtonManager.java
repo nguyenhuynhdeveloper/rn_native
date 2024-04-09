@@ -9,6 +9,9 @@ import com.facebook.react.uimanager.annotations.ReactProp;
 
 import javax.annotation.Nonnull;
 
+// https://viblo.asia/p/hoc-react-native-tu-co-ban-den-nang-cao-phan-4-goi-native-ui-android-trong-react-native-RnB5pyYrKPG
+// Làm theo hướng dãn của Viblo
+
 public class ReactProgressButtonManager extends SimpleViewManager<CircularProgressButton> {
     private static final String TAG = "RNProgressButtonManager";
 

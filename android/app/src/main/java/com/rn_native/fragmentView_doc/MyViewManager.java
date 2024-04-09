@@ -1,6 +1,6 @@
 
 
-package com.rn_native.android_fragment_doc;
+package com.rn_native.fragmentView_doc;
 
 //// replace with your package
 //package com.mypackage;
@@ -17,12 +17,13 @@ import androidx.fragment.app.FragmentActivity;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReadableArray;
 import com.facebook.react.common.MapBuilder;
-import com.facebook.react.uimanager.annotations.ReactProp;
 import com.facebook.react.uimanager.annotations.ReactPropGroup;
 import com.facebook.react.uimanager.ViewGroupManager;
 import com.facebook.react.uimanager.ThemedReactContext;
 
 import java.util.Map;
+// Tạo ra 1 cái MyViewManager kế thừa từ ViewGroupManager : Để có thể đăng ký cái MyFragment vào
+
 
 public class MyViewManager extends ViewGroupManager<FrameLayout> {
 
@@ -99,7 +100,8 @@ public class MyViewManager extends ViewGroupManager<FrameLayout> {
     setupLayout(parentView);
 
 //    final MyFragment myFragment = new MyFragment();
-    final FragmentTo_RN myFragment = new FragmentTo_RN();
+    final FragmentTo_RN myFragment = new FragmentTo_RN();  // Sử dụng cái Fragment vẽ từ xml chứ không phải từ code
+
     FragmentActivity activity = (FragmentActivity) reactContext.getCurrentActivity();
     activity.getSupportFragmentManager()
             .beginTransaction()

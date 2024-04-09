@@ -10,6 +10,7 @@ import com.rn_native.R;
 
 //import com.rn_native.R;
 
+// Đây là 1 file vẽ ra cái activity 
 public class OpenActivity extends AppCompatActivity {
 
     @Override

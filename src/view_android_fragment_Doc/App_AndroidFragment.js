@@ -20,7 +20,7 @@ export default class App_AndroidFragment extends Component<Props> {
 
   render() {
     return (
-      <View style={(styles.container, {backgroundColor: 'red'})}>
+      <View style={{...styles.container, backgroundColor: 'red'}}>
         <Text>{instructions}</Text>
         <Text style={styles.welcome} onPress={this.onClick}>
           Click here {this.state.progress}

@@ -17,6 +17,8 @@ import android.util.Log;
 
 import androidx.annotation.Nullable;
 
+// https://reactnative.dev/docs/native-modules-android
+// Làm theo hướng dẫn của Doc React Native 
 
 public class CalendarModule extends ReactContextBaseJavaModule {
    CalendarModule(ReactApplicationContext context) {

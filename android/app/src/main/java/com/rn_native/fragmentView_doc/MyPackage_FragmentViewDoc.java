@@ -1,6 +1,5 @@
 
-package com.rn_native.android_fragment_doc;
-import androidx.annotation.NonNull;
+package com.rn_native.fragmentView_doc;
 
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.NativeModule;
@@ -16,7 +15,7 @@ import java.util.ArrayList;
 import javax.annotation.Nonnull;
 
 
-public class My_FragmentDoc_Package implements ReactPackage {
+public class MyPackage_FragmentViewDoc implements ReactPackage {
 
     @Nonnull
     @Override
