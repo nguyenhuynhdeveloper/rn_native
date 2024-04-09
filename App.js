@@ -1,7 +1,6 @@
 import React from 'react';
 import { NativeModules, Button, View } from 'react-native';
 
-import App_NativeModule from './src/module_doc/App_NativeModule'; // file native module doc
 import BadgeModuleApp from './src/badgeModule/BadgeModule_App';
 
 
