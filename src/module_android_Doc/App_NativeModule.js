@@ -17,12 +17,19 @@ import {
   Button,
   TouchableOpacity,
   View,
+  Text,
 } from 'react-native';
+
+
 
 import CalendarModule from './BetterNativeModuleExport';
 
 const App_NativeModule = () => {
   // const {CalendarModule} = NativeModules; // Lấy từ NativeModules ra sử dụng
+
+  // const { BackPressReactModule } = NativeModules;
+
+
 
   const { DEFAULT_EVENT_NAME } = CalendarModule.getConstants();
 
@@ -92,6 +99,8 @@ const App_NativeModule = () => {
     let eventListener = eventEmitter.addListener('EventReminder', event => {
       // Có thể chạy hàm nào đó với dữ liệu được truyền sang từ bên native 
       console.log('Event emit from naitve: data : ', event.eventProperty); // Data được truyền sang từ native 
+
+      // BackPressReactModule.goBack();
     });
 
     // Removes the listener once unmounted
@@ -150,6 +159,16 @@ const App_NativeModule = () => {
         color="#841584"
         onPress={onPress_CreateEventFromNative}
       />
+      <View style={{ height: 50 }} />
+      <TouchableOpacity
+        style={{ height: 100, backgroundColor: 'pink' }}
+        onPress={() => {
+          // Gọi phương thức startNativeActivity từ Native Module
+          console.log("Open Activity Android ");
+          NativeModules.MyNativeModule.startNativeActivity();
+        }}>
+        <Text>Onclick </Text>
+      </TouchableOpacity>
 
     </View>
   );

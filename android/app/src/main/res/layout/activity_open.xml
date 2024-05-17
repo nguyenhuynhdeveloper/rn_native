@@ -4,10 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".open_activity.OpenActivity">
+    tools:context=".open_activity.OpenActivity"
+    android:orientation="vertical">
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:hint="XIn chào "
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_trigger_event"
+        android:text="Trigger Event from side native android"
+        android:background="@color/cpb_blue"
         />
 </LinearLayout>

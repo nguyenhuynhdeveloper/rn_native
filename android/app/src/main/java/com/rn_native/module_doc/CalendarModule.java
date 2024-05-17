@@ -21,8 +21,11 @@ import androidx.annotation.Nullable;
 // Làm theo hướng dẫn của Doc React Native 
 
 public class CalendarModule extends ReactContextBaseJavaModule {
-   CalendarModule(ReactApplicationContext context) {
+
+   private static ReactApplicationContext reactContext;
+   public CalendarModule(ReactApplicationContext context) {
        super(context);
+      reactContext = context;
    }
    // add to CalendarModule.java
 
@@ -122,6 +125,12 @@ public void createCalendarEvent(String name, String location) {
       WritableMap params = Arguments.createMap();
       params.putString("eventProperty", "someValue");
       sendEvent(getReactApplicationContext(), "EventReminder", params);   //Tham số 2:  Tên Event -Tham số 3:  Tham số gửi sang RN
+   }
+
+   public static void sendEvent(String eventName, String eventData) {
+      reactContext
+              .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
+              .emit(eventName, eventData);
    }
 
 }
