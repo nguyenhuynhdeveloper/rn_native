@@ -26,73 +26,83 @@ const App_NativeModule = () => {
 
   const { DEFAULT_EVENT_NAME } = CalendarModule.getConstants();
 
-  const onPress = () => {
-    console.log('We will invoke the native module here!');
+  const onPress_runMethodSideNative = () => {
+    console.log('_onPress_runMethodSideNative run !');
     CalendarModule.createCalendarEvent('testName', 'testLocation');
 
     console.log('DEFAULT_EVENT_NAME :', DEFAULT_EVENT_NAME);
   };
 
-  const onPress_Callback = () => {
-    console.log('We will invoke the native module here!');
+  const onPress_oneCallback = () => {
+    console.log('_onPress_Callback run  !');
     CalendarModule.createCalendarEvent_Callback('testName', 'testLocation',
       eventId => {
-        console.log(`Created a new event with id ${eventId}`);
+        console.log(` Chạy callback khai báo bên RN -- Kích hoạt bên native : ${eventId}`);
       },);
 
     console.log('DEFAULT_EVENT_NAME :', DEFAULT_EVENT_NAME);
   };
 
-  const onPress_Callback_side_RN = () => {
-    console.log('We will invoke the native module here!');
+  const onPress_oneCallback_logic_side_RN = () => {
+    console.log('_onPress_oneCallback_logic_side_RN run  !');
     CalendarModule.createCalendarEvent_Callback_logicRN('testName', 'testLocation',
       (error, eventId) => {
         if (error) {  // Tham số 1 bên native đang là null
-          console.error(`Callback side RN: Error found! ${error}`);
+          console.error(`Callback của RN -- Kích hoạt từ native:: Error found! ${error}`);
         }
-        console.log(`Callback side RN: event id ${eventId} returned`);
+        console.log(`Callback của RN -- Kích hoạt từ native:: event id ${eventId} returned`);
       },);
 
     console.log('DEFAULT_EVENT_NAME :', DEFAULT_EVENT_NAME);
   };
 
-  const onPress_Callback_side_Native = () => {
+  const onPress_twoCallback_logic_side_native = () => {
+    console.log('_onPress_twoCallback_logic_side_native run  !');
     CalendarModule.createCalendarEvent_Callback_logicNative(
       'testName',
       'testLocation',
       error => {
-        console.error(`Callback side Native: Error found! ${error}`);
+        console.error(`Callback của RN -- Kích hoạt từ native: Error found! ${error}`);
       },
       eventId => {
-        console.log(`Callback side Native: event id ${eventId} returned`);
+        console.log(`Callback của RN -- Kích hoạt từ native: event id ${eventId} returned`);
       },
     );
   };
 
 
   const onPress_Promise = async () => {
+    console.log('_onPress_Promise run  !');
+
     try {
       const eventId = await CalendarModule.createCalendarEvent_Promise(
         'Party',
         'My House',
-      );  // Tham số thứ 3 là Promise không cần ghi 
-      console.log(`Created a new event with id ${eventId}`);
+      );  // Tham số thứ 3 là Promise không cần ghi -- Tham số thứ 3: chính là cái try-catch này 
+      console.log(`Promise của RN được chạy -- kích hoạt bên native ${eventId}`);
     } catch (e) {
       console.error(e);
     }
   };
 
+  // Biến mà chứa hàm lắng nghe sự kiện bên native 
   const eventEmitter = new NativeEventEmitter(NativeModules.CalendarModule);   // Phải gói NativeModule.CalendarModule bằng 
+
   useEffect(() => {
     let eventListener = eventEmitter.addListener('EventReminder', event => {
-      console.log('Event emit from naitve ', event.eventProperty); // "someValue"
+      // Có thể chạy hàm nào đó với dữ liệu được truyền sang từ bên native 
+      console.log('Event emit from naitve: data : ', event.eventProperty); // Data được truyền sang từ native 
     });
 
     // Removes the listener once unmounted
     return () => {
-      // eventListener.remove();
+      eventListener.remove();
     };
   }, []);
+
+  const onPress_CreateEventFromNative = () => {
+    CalendarModule.createCalendarEvent_CreateEventFromNative();
+  };
 
   return (
     <View style={{ flex: 1 }}>
@@ -101,38 +111,44 @@ const App_NativeModule = () => {
       <Button
         title="Click to invoke your native module!"
         color="#841584"
-        onPress={onPress}
+        onPress={onPress_runMethodSideNative}
       />
 
       <View style={{ height: 50 }} />
 
       <Button
-        title="Callback Module !"
+        title="onPress_oneCallback !"
         color="#841584"
-        onPress={onPress_Callback}
+        onPress={onPress_oneCallback}
       />
 
       <View style={{ height: 50 }} />
 
       <Button
-        title="Callback Module logic side RN!"
+        title="onPress_oneCallback_logic_side_RN!"
         color="#841584"
-        onPress={onPress_Callback_side_RN}
+        onPress={onPress_oneCallback_logic_side_RN}
       />
       <View style={{ height: 50 }} />
 
       <Button
-        title="Callback Module logic side native !"
+        title="onPress_twoCallback_logic_side_native !"
         color="#841584"
-        onPress={onPress_Callback_side_Native}
+        onPress={onPress_twoCallback_logic_side_native}
       />
 
       <View style={{ height: 50 }} />
 
       <Button
-        title="Promise Module  !"
+        title="onPress_Promise  !"
         color="#841584"
         onPress={onPress_Promise}
+      />
+      <View style={{ height: 50 }} />
+      <Button
+        title="onPress_CreateEventFromNative  !"
+        color="#841584"
+        onPress={onPress_CreateEventFromNative}
       />
 
     </View>

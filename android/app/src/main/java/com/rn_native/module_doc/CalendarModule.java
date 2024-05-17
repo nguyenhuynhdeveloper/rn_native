@@ -25,47 +25,50 @@ public class CalendarModule extends ReactContextBaseJavaModule {
        super(context);
    }
    // add to CalendarModule.java
+
+   public static  final  String TAG = "CalendarModule ";
 @Override
 public String getName() {
    return "CalendarModule";
 }
 
+
+// Method : chạy 1 hàm bên native android
 @ReactMethod
 public void createCalendarEvent(String name, String location) {
-   Log.d("CalendarModule", "Create event called with name: " + name
+   Log.d(TAG, "Create event called with name: " + name
    + " and location: " + location);
 }
 
-// Có thể export Constant từ bên native sang bên RN
+// Exporting Constants : Có thể export Constant từ bên native sang bên RN -- bên RN có thể lấy dùng
    @Override
    public Map<String, Object> getConstants() {
       final Map<String, Object> constants = new HashMap<>();
-      constants.put("DEFAULT_EVENT_NAME", "New Event");
+      constants.put("DEFAULT_EVENT_NAME", " Constants side native Android");
       return constants;
    }
 
-   // Callback
-   // native module cũng hỗ trợ 1 loại tham số nữa là callback để có thể từ native kích hoạt chạy lại 1 hàm gì đó phía bên RN
+   // Callback : native module cũng hỗ trợ 1 loại tham số nữa là callback để có thể từ native kích hoạt chạy lại 1 hàm gì đó phía bên RN
    @ReactMethod
-   public void createCalendarEvent_Callback(String name, String location, Callback callBack) {
-      Log.d("CalendarModule", "createCalendarEvent_Callback: " + name
+   public void createCalendarEvent_Callback(String name, String location, Callback callBack) {   //Tham số 3: Hàm RN truyền sang
+      Log.d(TAG, "createCalendar have_run_Callback_side_RN: " + name
               + " and location: " + location);
       Integer eventId = 100;
-      callBack.invoke(eventId);
-      WritableMap params = Arguments.createMap();
-      params.putString("eventProperty", "someValue");
+      callBack.invoke(eventId);   //  Chạy hàm bên RN truyền sang -- Chạy bên RN
 
-      sendEvent(getReactApplicationContext(), "EventReminder", params);
+//      WritableMap params = Arguments.createMap();
+//      params.putString("eventProperty", "someValue");
+//      sendEvent(getReactApplicationContext(), "EventReminder", params);   //Tham số 2:  Tên Event -Tham số 3:  Tham số gửi sang RN
    }
 
 
    // Có 1 lưu ý quan trọng đó là tại 1 thời điểm chỉ chạy được 1 callback , có nghĩa là chỉ có thể chạy cái success hoặc fail không thể chạy cả 2
    // Có 2 cách để implement :
 
-      // Cách 1 : Logic ở bên RN
+   // Cách 1 : Logic ở bên RN
    @ReactMethod
    public void createCalendarEvent_Callback_logicRN(String name, String location, Callback callBack) {
-      Log.d("CalendarModule", "createCalendarEvent_Callback_logicRN: " + name
+      Log.d(TAG, "createCalendarEvent_Callback_logicRN: " + name
               + " and location: " + location);
       Integer eventId = 100;
       callBack.invoke(null, eventId);  // Tham số đầu tiên quyết định sẽ chạy hàm nào bên React native
@@ -75,7 +78,7 @@ public void createCalendarEvent(String name, String location) {
    // Cách 2 : Logic ở bên native
    @ReactMethod
    public void createCalendarEvent_Callback_logicNative(String name, String location, Callback myFailureCallback, Callback mySuccessCallback) {
-      Log.d("CalendarModule", "createCalendarEvent_Callback_logicRN: " + name
+      Log.d(TAG, "createCalendarEvent_Callback_logicRN: " + name
               + " and location: " + location);
       Integer eventId = 100;
 
@@ -91,6 +94,7 @@ public void createCalendarEvent(String name, String location) {
    // Promise: Trả ra 1 promise để bên RN có thể async/ await để có thể lấy về kết quả
    @ReactMethod
    public void createCalendarEvent_Promise(String name, String location, Promise promise) {
+      Log.d(TAG, "_createCalendarEvent_Promise run in native : " );
       try {
          Integer eventId = 100;
          promise.resolve(eventId);
@@ -100,13 +104,24 @@ public void createCalendarEvent(String name, String location) {
    }
 
    // Sending event to javascript
-   // Để có thể kích hoạt 1 event mà bên RN đăng ký nhận event đó phát ra từ bên nnative
+   // Để có thể kích hoạt 1 event mà bên RN đăng ký nhận event đó phát ra từ bên native
 
    private void sendEvent(ReactContext reactContext,
                           String eventName,
                           @Nullable WritableMap params) {
       reactContext
               .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
-              .emit(eventName, params);
+              .emit(eventName, params);  // Truyền tên Event - Tham số  : sẽ chạy bên React native
    }
+
+   @ReactMethod
+   public void createCalendarEvent_CreateEventFromNative() {   //Tham số 3: Hàm RN truyền sang
+      Log.d(TAG, "_createCalendarEvent_CreateEventFromNative run in native : " );
+
+
+      WritableMap params = Arguments.createMap();
+      params.putString("eventProperty", "someValue");
+      sendEvent(getReactApplicationContext(), "EventReminder", params);   //Tham số 2:  Tên Event -Tham số 3:  Tham số gửi sang RN
+   }
+
 }
