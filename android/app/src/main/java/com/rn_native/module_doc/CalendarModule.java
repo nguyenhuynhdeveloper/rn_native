@@ -109,6 +109,8 @@ public void createCalendarEvent(String name, String location) {
    // Sending event to javascript
    // Để có thể kích hoạt 1 event mà bên RN đăng ký nhận event đó phát ra từ bên native
 
+
+   // Hàm sendEvent : của DOC 
    private void sendEvent(ReactContext reactContext,
                           String eventName,
                           @Nullable WritableMap params) {
@@ -127,6 +129,8 @@ public void createCalendarEvent(String name, String location) {
       sendEvent(getReactApplicationContext(), "EventReminder", params);   //Tham số 2:  Tên Event -Tham số 3:  Tham số gửi sang RN
    }
 
+
+   // Hàm sendEvent lược bỏ tham số ReactConText -- 
    public static void sendEvent(String eventName, String eventData) {
       reactContext
               .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
