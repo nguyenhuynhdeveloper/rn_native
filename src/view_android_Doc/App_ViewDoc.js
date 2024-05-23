@@ -28,11 +28,16 @@ export default class App_ViewDoc extends Component<Props> {
           Click here {this.state.progress}
         </Text>
         <ImageView
-          src={
-            'https://www.google.com/images/branding/googlelogo/2x/googlelogo_light_color_92x30dp.png'
-          }
-        // src="../assets/hot-girl.jpg"
-        // src="R.drawable.ic_laucher"
+          // src={
+          //   'https://www.google.com/images/branding/googlelogo/2x/googlelogo_light_color_92x30dp.png'
+          // }
+
+          // src={['https://www.google.com/images/branding/googlelogo/2x/googlelogo_light_color_92x30dp.png']}
+
+
+          // src={["../assets/hot-girl.jpg"]}
+          src={["@drawable.ic_laucher"]}
+          src={["R.drawable.ic_laucher"]}
         // style={{ height: 100, width: 100 }}
         />
       </View>

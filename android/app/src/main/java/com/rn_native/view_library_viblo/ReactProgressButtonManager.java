@@ -1,4 +1,4 @@
-package com.rn_native.view_library;
+package com.rn_native.view_library_viblo;
 
 import android.util.Log;
 
