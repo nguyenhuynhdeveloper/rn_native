@@ -1,0 +1,17 @@
+*~
+build/
+out/
+dist/
+bin/
+gen/
+classes/
+.DS_Store
+.idea
+local.properties
+*.iml
+*.iws
+projectFilesBackup/
+project.properties
+.gradle
+*.keystore
+*.apk
