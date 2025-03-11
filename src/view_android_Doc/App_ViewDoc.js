@@ -32,9 +32,19 @@ export default class App_ViewDoc extends Component<Props> {
           //   'https://www.google.com/images/branding/googlelogo/2x/googlelogo_light_color_92x30dp.png'
           // }
 
+          // src={[
+          //   'https://www.google.com/images/branding/googlelogo/2x/googlelogo_light_color_92x30dp.png',
+          // ]}
+
+          // src={[(uri: 'https://example.com/image.jpg')]}
           src={[
-            'https://www.google.com/images/branding/googlelogo/2x/googlelogo_light_color_92x30dp.png',
+            {
+              uri: 'https://www.google.com/images/branding/googlelogo/2x/googlelogo_light_color_92x30dp.png',
+            },
           ]}
+          style={{width: 200, height: 200}}
+          resizeMode="contain"
+          // resizeMode="center"
 
           // src={["../assets/hot-girl.jpg"]}
           // src={['@drawable.ic_laucher']}

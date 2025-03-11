@@ -32,6 +32,7 @@ public class ReactProgressButtonManager extends SimpleViewManager<CircularProgre
     }
 
     // Các hàm sẽ chạy nếu mà nhận được Prop là text --> thay đổi text của native UI 
+    // Khai báo các thuộc tính có thể được truyền vào từ React Native 
     @ReactProp(name = "text", customType = "")
     public void setText(CircularProgressButton circularProgressButton, String text) {
         Log.i(TAG, " setText "+text);

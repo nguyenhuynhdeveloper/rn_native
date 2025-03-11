@@ -18,7 +18,7 @@ class MyCustomView extends View {
         super(context);
     }
 
-    //   ...
+
     public void onReceiveNativeEvent() {
         WritableMap event = Arguments.createMap();
         event.putString("message", "MyMessage");
