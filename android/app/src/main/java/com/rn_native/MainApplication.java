@@ -13,6 +13,7 @@ import com.rn_native.fragmentviewDoc.MyFragmentViewDocPackage;
 import com.rn_native.openActivity.MyOpenActivityPackage;
 import com.rn_native.viewDoc.NativeViewDocPackage;
 import com.rn_native.viewLibraryViblo.NativeViewPackage;
+import com.rn_native.customTextView.CustomTextViewPackage;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
@@ -40,6 +41,7 @@ public class MainApplication extends Application implements ReactApplication {
 
             packages.add(new NativeViewPackage());   // Mở 1 View thư viện của android -> RN -- Làm theo Viblo
             packages.add(new MyOpenActivityPackage());     // Package Mở 1 Activity của android vào view của React Native
+            packages.add(new CustomTextViewPackage());   // Đưa 1 view custom Text view trong android ra sử dụng ở React Native
 
           return packages;
         }

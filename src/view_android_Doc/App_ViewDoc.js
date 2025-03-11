@@ -3,6 +3,7 @@ import {Platform, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 // import CircularProgressButton from './src/CircularProgressButton';
 import ImageView from './ImageView';
 // import Image frm '../assets/hot-girl.jpg'
+import CustomTextView from './CustomTextView';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -51,6 +52,11 @@ export default class App_ViewDoc extends Component<Props> {
           // src={["R.drawable.ic_laucher"]}
           // style={{ height: 100, width: 100 }}
         />
+
+        <CustomTextView
+          style={styles.textView}
+          text="Hello from Native Android!"
+        />
       </View>
     );
   }
@@ -74,5 +80,9 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: '#333333',
     marginBottom: 5,
+  },
+  textView: {
+    width: 200,
+    height: 50,
   },
 });
