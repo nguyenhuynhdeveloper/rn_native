@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class MyOpenActivityPackage implements ReactPackage {
+public class OpenActivityPackage implements ReactPackage {
 
     @Override
     public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {
@@ -21,8 +21,7 @@ public class MyOpenActivityPackage implements ReactPackage {
     public List<NativeModule> createNativeModules(
             ReactApplicationContext reactContext) {
         List<NativeModule> modules = new ArrayList<>();
-
-        modules.add(new MyNativeModule(reactContext));
+        modules.add(new OpenActivityModule(reactContext));
 
         return modules;
     }

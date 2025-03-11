@@ -27,9 +27,10 @@ public class CalendarModule extends ReactContextBaseJavaModule {
        super(context);
       reactContext = context;
    }
-   // add to CalendarModule.java
 
+   // add to CalendarModule.java
    public static  final  String TAG = "CalendarModule ";
+
 @Override
 public String getName() {
    return "CalendarModule";
@@ -43,7 +44,7 @@ public void createCalendarEvent(String name, String location) {
    + " and location: " + location);
 }
 
-// Exporting Constants : Có thể export Constant từ bên native sang bên RN -- bên RN có thể lấy dùng
+   // Exporting Constants : Có thể export Constant từ bên native sang bên RN -- bên RN có thể lấy dùng
    @Override
    public Map<String, Object> getConstants() {
       final Map<String, Object> constants = new HashMap<>();

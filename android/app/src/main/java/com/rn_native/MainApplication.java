@@ -9,7 +9,7 @@ import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.soloader.SoLoader;
 import com.rn_native.module_doc.MyAppPackage;
-import com.rn_native.open_activity.MyOpenActivityPackage;
+import com.rn_native.open_activity.OpenActivityPackage;
 
 
 import java.lang.reflect.InvocationTargetException;
@@ -34,7 +34,7 @@ public class MainApplication extends Application implements ReactApplication {
           // below MyAppPackage is added to the list of packages returned
 
             packages.add(new MyAppPackage());  // native module doc
-            packages.add(new MyOpenActivityPackage());     // Package Mở 1 Activity của android vào view của React Native
+            packages.add(new OpenActivityPackage());     // Package Mở 1 Activity của android vào view của React Native
 
 
           return packages;

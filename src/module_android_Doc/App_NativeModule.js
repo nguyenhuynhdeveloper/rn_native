@@ -165,7 +165,7 @@ const App_NativeModule = () => {
         onPress={() => {
           // Gọi phương thức startNativeActivity từ Native Module
           console.log("Open Activity Android ");
-          NativeModules.MyNativeModule.startNativeActivity();
+          NativeModules.OpenActivityModule.startNativeActivity();
         }}>
         <Text>Onclick </Text>
       </TouchableOpacity>
