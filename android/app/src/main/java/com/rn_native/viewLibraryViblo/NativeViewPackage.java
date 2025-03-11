@@ -1,21 +1,17 @@
-
-package com.rn_native.fragmentView_doc;
+package com.rn_native.viewLibraryViblo;
 
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.NativeModule;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.uimanager.ViewManager;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-
-import java.util.ArrayList;
-
 import javax.annotation.Nonnull;
 
-
-public class MyPackage_FragmentViewDoc implements ReactPackage {
+public class NativeViewPackage implements ReactPackage {
 
     @Nonnull
     @Override
@@ -23,11 +19,9 @@ public class MyPackage_FragmentViewDoc implements ReactPackage {
         return new ArrayList<>();
     }
 
+    @Nonnull
     @Override
-   public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {
-        return Arrays.<ViewManager>asList(
-                new MyViewManager(reactContext)
-        );
-   }
-
+    public List<ViewManager> createViewManagers(@Nonnull ReactApplicationContext reactContext) {
+        return Arrays.asList(new ReactProgressButtonManager());
+    }
 }

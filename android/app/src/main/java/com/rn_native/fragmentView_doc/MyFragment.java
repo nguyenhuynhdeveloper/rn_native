@@ -1,4 +1,4 @@
-package com.rn_native.fragmentView_doc;
+package com.rn_native.fragmentviewDoc;
 
 
 //// replace with your package
@@ -11,16 +11,13 @@ import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
 // Tạo 1 cái My Fragment kê thừa từ Fragment
-
 public class MyFragment extends Fragment {
     CustomView customView;
-//    FragmentTo_RN customView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
         super.onCreateView(inflater, parent, savedInstanceState);
         customView = new CustomView(this.getContext());
-//        customView = new FragmentTo_RN();
         return customView; // this CustomView could be any view that you want to render
     }
 

@@ -1,10 +1,6 @@
 
 
-package com.rn_native.fragmentView_doc;
-
-//// replace with your package
-//package com.mypackage;
-
+package com.rn_native.fragmentviewDoc;
 import android.view.Choreographer;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,9 +18,8 @@ import com.facebook.react.uimanager.ViewGroupManager;
 import com.facebook.react.uimanager.ThemedReactContext;
 
 import java.util.Map;
+
 // Tạo ra 1 cái MyViewManager kế thừa từ ViewGroupManager : Để có thể đăng ký cái MyFragment vào
-
-
 public class MyViewManager extends ViewGroupManager<FrameLayout> {
 
   public static final String REACT_CLASS = "MyViewManager";
@@ -33,7 +28,6 @@ public class MyViewManager extends ViewGroupManager<FrameLayout> {
   private int propHeight;
 
   ReactApplicationContext reactContext;
-
   public MyViewManager(ReactApplicationContext reactContext) {
     this.reactContext = reactContext;
   }
@@ -42,7 +36,6 @@ public class MyViewManager extends ViewGroupManager<FrameLayout> {
   public String getName() {
     return REACT_CLASS;
   }
-
   /**
    * Return a FrameLayout which will later hold the Fragment
    */
@@ -61,7 +54,7 @@ public class MyViewManager extends ViewGroupManager<FrameLayout> {
   }
 
   /**
-   * Handle "create" command (called from JS) and call createFragment method
+   * Handle "create" command (called from JS) and call _createFragment method
    */
   @Override
   public void receiveCommand(
@@ -99,8 +92,8 @@ public class MyViewManager extends ViewGroupManager<FrameLayout> {
     ViewGroup parentView = (ViewGroup) root.findViewById(reactNativeViewId);
     setupLayout(parentView);
 
-//    final MyFragment myFragment = new MyFragment();
-    final FragmentTo_RN myFragment = new FragmentTo_RN();  // Sử dụng cái Fragment vẽ từ xml chứ không phải từ code
+//    final MyFragment myFragment = new MyFragment();  // Sử dụng cái Fragment vẽ từ code - CustomView chứ không phải từ xml
+    final  FragmentToRN myFragment = new  FragmentToRN();  // Sử dụng cái Fragment vẽ từ xml chứ không phải từ code
 
     FragmentActivity activity = (FragmentActivity) reactContext.getCurrentActivity();
     activity.getSupportFragmentManager()
@@ -108,6 +101,7 @@ public class MyViewManager extends ViewGroupManager<FrameLayout> {
             .replace(reactNativeViewId, myFragment, String.valueOf(reactNativeViewId))
             .commit();
   }
+  
 
   public void setupLayout(View view) {
     Choreographer.getInstance().postFrameCallback(new Choreographer.FrameCallback() {

@@ -1,4 +1,4 @@
-package com.rn_native.fragmentView_doc;
+package com.rn_native.fragmentviewDoc;
 
 import android.os.Bundle;
 
@@ -10,19 +10,18 @@ import android.view.ViewGroup;
 
 import com.rn_native.R;
 
-//  Cái FragmentTo_RN này ngang hàng với MyFragment của Doc react native
-public class FragmentTo_RN extends Fragment {
+// Cái FragmentToRN này ngang hàng với MyFragment của Doc react native 
+// FragmentToRN thì được vẽ bằng xml 
+// MyFragment thì được vẽ bằng code
+public class  FragmentToRN extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
-    public FragmentTo_RN() {
+    public  FragmentToRN() {
         // Required empty public constructor
     }
 
@@ -32,11 +31,11 @@ public class FragmentTo_RN extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment FragmentTo_RN.
+     * @return A new instance of fragment  FragmentToRN.
      */
     // TODO: Rename and change types and number of parameters
-    public static FragmentTo_RN newInstance(String param1, String param2) {
-        FragmentTo_RN fragment = new FragmentTo_RN();
+    public static  FragmentToRN newInstance(String param1, String param2) {
+         FragmentToRN fragment = new  FragmentToRN();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);

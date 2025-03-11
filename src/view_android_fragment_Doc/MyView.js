@@ -25,7 +25,7 @@ export const MyView = () => {
         // converts dpi to px, provide desired height
         height: PixelRatio.getPixelSizeForLayoutSize(200),
         // converts dpi to px, provide desired width
-        width: PixelRatio.getPixelSizeForLayoutSize(200),
+        width: PixelRatio.getPixelSizeForLayoutSize(150),
       }}
       ref={ref}
     />

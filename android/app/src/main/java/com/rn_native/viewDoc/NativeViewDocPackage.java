@@ -1,4 +1,6 @@
-package com.rn_native.view_library_viblo;
+
+
+package com.rn_native.viewDoc;
 
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.NativeModule;
@@ -11,7 +13,10 @@ import java.util.List;
 
 import javax.annotation.Nonnull;
 
-public class NativeViewPackage implements ReactPackage {
+// Tạo 1 class NativeViewDocPackage 
+// Đăng ký ReactImageMangerDoc vào trong Package này 
+
+public class NativeViewDocPackage implements ReactPackage {
 
     @Nonnull
     @Override
@@ -22,6 +27,6 @@ public class NativeViewPackage implements ReactPackage {
     @Nonnull
     @Override
     public List<ViewManager> createViewManagers(@Nonnull ReactApplicationContext reactContext) {
-        return Arrays.asList(new ReactProgressButtonManager());
+        return Arrays.asList(new ReactImageManager(reactContext));
     }
 }

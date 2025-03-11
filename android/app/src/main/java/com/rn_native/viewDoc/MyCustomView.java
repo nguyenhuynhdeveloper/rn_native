@@ -1,4 +1,4 @@
-package com.rn_native.view_doc;
+package com.rn_native.viewDoc;
 
 
 

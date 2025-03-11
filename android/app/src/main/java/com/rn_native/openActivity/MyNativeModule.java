@@ -1,4 +1,4 @@
-package com.rn_native.open_activity;     // Trong file MyNativeModule.java
+package com.rn_native.openActivity;     // Trong file MyNativeModule.java
 
 import android.app.Activity;
 import android.content.Intent;

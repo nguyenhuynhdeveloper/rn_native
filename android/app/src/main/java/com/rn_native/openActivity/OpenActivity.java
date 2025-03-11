@@ -1,4 +1,4 @@
-package com.rn_native.open_activity;
+package com.rn_native.openActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 

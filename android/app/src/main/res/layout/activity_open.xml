@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".open_activity.OpenActivity">
+    tools:context=".openActivity.OpenActivity">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:hint="XIn chào "
+        android:hint="Xin chào "
         />
 </LinearLayout>
