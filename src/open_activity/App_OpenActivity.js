@@ -1,25 +1,15 @@
 import React from 'react';
 import type {Node} from 'react';
 import {
-  Button,
   SafeAreaView,
-  ScrollView,
-  StatusBar,
   StyleSheet,
   Text,
   TouchableOpacity,
   useColorScheme,
-  View,
   NativeModules,
 } from 'react-native';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import {Colors} from 'react-native/Libraries/NewAppScreen';
 
 const {OpenActivityModule} = NativeModules;
 
@@ -32,22 +22,15 @@ const App_OpenActivity: () => Node = () => {
 
   return (
     <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-
-        <TouchableOpacity
-          style={{height: 100, backgroundColor: 'pink'}}
-          onPress={() => {
-            // Gọi phương thức startNativeActivity từ Native Module đê mở 1 activity bên phía android
-            console.log('CLick ');
-            OpenActivityModule.startNativeActivity();
-          }}>
-          <Text>Onclick </Text>
-        </TouchableOpacity>
-      </ScrollView>
+      <TouchableOpacity
+        style={{height: 100, backgroundColor: 'pink'}}
+        onPress={() => {
+          // Gọi phương thức startNativeActivity từ Native Module đê mở 1 activity bên phía android
+          console.log('CLick ');
+          OpenActivityModule.startNativeActivity();
+        }}>
+        <Text>Onclick </Text>
+      </TouchableOpacity>
     </SafeAreaView>
   );
 };

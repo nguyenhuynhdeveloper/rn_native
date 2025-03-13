@@ -35,10 +35,10 @@ public class CalendarModule extends ReactContextBaseJavaModule {
 
    @Override
    public String getName() {
-      return "CalendarModule";
+      return "CalendarModule"; // Đây chính là quyết định tên của module
    }
 
-   // Method : chạy 1 hàm bên native android
+   // Method : Chạy 1 hàm bên native android
    @ReactMethod
    public void createCalendarEvent(String name, String location) {
       Log.d(TAG, "Create event called with name: " + name
@@ -48,7 +48,7 @@ public class CalendarModule extends ReactContextBaseJavaModule {
    // Exporting Constants : Có thể export Constant từ bên native sang bên RN -- bên
    // RN có thể lấy dùng
    @Override
-   public Map<String, Object> getConstants() {
+   public Map<String, Object> getConstants() { // Hàm khai báo constants qua cho JS dùng
       final Map<String, Object> constants = new HashMap<>();
       constants.put("DEFAULT_EVENT_NAME", " Constants side native Android");
       return constants;
@@ -136,8 +136,12 @@ public class CalendarModule extends ReactContextBaseJavaModule {
 
       WritableMap params = Arguments.createMap();
       params.putString("eventProperty", "someValue");
-      sendEvent(getReactApplicationContext(), "EventReminder", params); // Tham số 2: Tên Event -Tham số 3: Tham số gửi
+      sendEvent(getReactApplicationContext(), "EventReminder", params); // Tham số 2: Tên Event: EventReminder -Tham số
+                                                                        // 3: Tham số gửi
                                                                         // sang RN
+      WritableMap params1 = Arguments.createMap();
+      params1.putString("eventProperty", "someValue");
+      sendEvent("EventReminder", "params");
    }
 
    // Hàm sendEvent lược bỏ tham số ReactConText --
